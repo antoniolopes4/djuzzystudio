@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodapé Responsivo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr;
+    gap: 10px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.footer-column {
+    padding: 10px;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+.footer-column h3 {
+    margin-top: 0;
+}
+
+.footer-column-large {
+    grid-column: span 1;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .footer {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .footer-column-large {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 800px) {
+    .footer {
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer-column-large {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        grid-template-columns: 1fr;
+    }
+    .footer-column-large {
+        grid-column: span 1;
+    }
+}
+
+</style>
+<body>
+    <!-- Conteúdo da página -->
+
+    <footer class="footer">
+        <div class="footer-column footer-column-large">
+            <h3>Coluna 1</h3>
+            <p>Conteúdo da coluna 1, que é duas vezes maior do que as outras colunas.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Coluna 2</h3>
+            <p>Conteúdo da coluna 2.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Coluna 3</h3>
+            <p>Conteúdo da coluna 3.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Coluna 4</h3>
+            <p>Conteúdo da coluna 4.</p>
+        </div>
+    </footer>
+</body>
+</html>

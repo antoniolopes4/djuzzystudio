@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../css/booknow.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../img/logo.png" alt="Logo">
+            </div>
+            <div class="menu-left">
+                <a class="" href="index.html">
+                    Home
+                    <span></span>
+                </a>
+                <a class="" href="index.html">
+                    Sobre
+                    <span></span>
+                </a>
+                <a href="contacto.html">Contacto
+                    <span></span>
+                </a>
+                <a href="servicos.html">Servicos
+                    <span></span>
+                </a>
+            </div>
+            <div class="menu-right">
+                <a class="active" href="booknow.html" class="cta-button">Book Now</a>
+                <div class="hamburger" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+        <div id="mobileMenu" class="mobile-menu">
+            <a href="#" class="closebtn" onclick="toggleMobileMenu()">&times;</a>
+            <a href="#">Home</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contacto</a>
+            <a href="#">Serviços</a>
+            <a href="#" class="cta-button">Book Now</a>
+        </div>
+    </header>
+    <div class="wrapper-booknow">
+        <div class="booknow-image">
+            <h1>BOOKING</h1>
+            <div class="booknow-started">
+                <h2>Get Started</h2>
+                <p style="margin: 10px 0px;">Let’s create something amazing together!</p>
+                <div class="booknow-started-content">
+                    <h3>For  <span>Studio Booking</span>  inquiries, please fill out <br> the form or use the contact info below.</h3>
+                </div>
+
+                <div style="font-size: 1.2em; margin: 20px 0px;">
+                    <p style="">To inquire about a “student session week” at The Blackbird Academy, <span>go here.</span>  </p>
+                </div>
+
+                <div style="font-size: 1.2em; padding: 30px 15px; border-top: 1px solid rgba(255, 255, 255, 0.25); border-bottom: 1px solid rgba(255, 255, 255, 0.25);">
+                    <p>
+                        info@blackbirdstudio.com
+                    </p>
+                    <p>
+                        Call Rolff at (615) 467-4487
+                    </p>
+                </div>
+
+                <div class="wrapper-social-media">
+                    <h1>Follow Us On Social Media</h1>
+                    <div class="social-media">
+                        <a href="">
+                            <i class='bx bxl-instagram' style='color:#ffffff; font-size: 25px;'  ></i>
+                        </a>
+                        <a href="">
+                            <i class='bx bxl-facebook-square' style='color:#ffffff; font-size: 25px;'  ></i>
+                        </a>
+                        <a href="">
+                            <i class='bx bxl-twitter' style='color:#ffffff;font-size: 25px;' ></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="booknow-form" style="display: flex; flex-direction: column;align-items: center;">
+            <div class="" style="gap: 10px; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 30px;">
+                <a href="index.html" style="background-color: black; border-radius: 50%; display: block; margin: 0px 0px; padding: 6px 10px;">
+                    <img src="../img/logo.png" alt="" style="width: 50px; height: 50px;">
+                </a>
+                <h1 style="text-align: center;">Studio Booking Form</h1>
+            </div>
+            <form action="" style="padding: 1rem 3rem; width: 100%;">
+                <div class="" style="width: 100%;">
+                    <label for="">Nome <span style="color: red;">*</span></label>
+                    <div class="" style="margin: 10px 0px; display: grid; gap: 10px; grid-template-columns: 1fr 1fr;">
+                        <input type="text" placeholder="First" style="padding: 10px; grid-column: 1 span; border: none; background-color: #ededed;" required>
+                        <input type="text" placeholder="Last" style="padding: 10px; border: none; background-color: #ededed;" required>
+                    </div>
+                </div>
+                <div class="" style="width: 100%; margin-top: 20px;">
+                    <div class="" style="margin: 10px 0px; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit,minmax(100px,1fr));">
+                        <div style="grid-column: 1 span;">
+                            <label for="" style="display: block;">Phone <span style="color: red;">*</span></label>
+                            <input type="tel" placeholder="Phone" style="padding: 10px; width: 100%; border: none; background-color: #ededed;" required>
+                        </div>
+                        <div style="grid-column: 2 span;">
+                            <label for="" style="display: block;">Email <span style="color: red;">*</span></label>
+                            <input type="email" placeholder="First" style="padding: 10px; width: 100%; border: none; background-color: #ededed;" required>
+                        </div>
+                        <div style=" grid-column: 1 span;">
+                            <label for="" style="display: block;">Int' Prefix <span style="color: red;">*</span></label>
+                            <input type="text" placeholder="Int' Prefix" style="padding: 10px; width: 100%; border: none; background-color: #ededed;" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="" style="width: 100%; margin-top: 20px;">
+                    <div class="" style="margin: 10px 0px; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit,minmax(180px,1fr));">
+                        <div style="grid-column: 2 span;">
+                            <label for="" style="display: block;">WebSite <span style="color: red;">*</span></label>
+                            <input type="text" placeholder="WebSite" style="padding: 10px; width: 100%; border: none; background-color: #ededed;" required>
+                        </div>
+                        <div style="grid-column: 1 span;">
+                            <label for="" style="display: block;">Music genre/type <span style="color: red;">*</span></label>
+                            <select name="" id="" style="padding: 10px; border: none; background-color: #ededed;" required>
+                                <option value="">seleciona um genero/tipo</option>
+                                <option value="">pop</option>
+                                <option value="">country</option>
+                                <option value="">hip-hop , rap</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="" style="width: 100%; margin-top: 20px;">
+                    <div class="" style="margin: 10px 0px; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit,minmax(180px,1fr));">
+                        <div style="grid-column: 1 span;">
+                            <label for="" style="display: block;">No. of songs <span style="color: red;">*</span></label>
+                            <span style="display: block; font-size: 12px;">How many songs are you planning to record?</span>
+                            <input type="text" placeholder="" style="padding: 10px; width: 100%; border: none; background-color: #ededed;" required>
+                        </div>
+                        <div style="grid-column: 2 span; align-self: center;">
+                            <label for="" style="display: block;">Details about your music <span style="color: red;">*</span></label>
+                            <span style="display: block; font-size: 12px;">How many songs are you planning to record?</span>
+                            <textarea name="" id="" cols="" rows="5px" required style="border: none; background-color: #ededed;"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="" style="width: 100%; margin-top: 20px;">
+                    <p>When would you like to record?</p>
+                    <div class="" style="margin: 20px 0px; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit,minmax(180px,1fr));">
+                        <div style="grid-column: 1 span;">
+                            <label for="" style="display: block;">START DATE <span style="color: red;">*</span></label>
+                            <input type="date" style="padding: 10px; width: 100%;border: none; background-color: #ededed;" required> 
+                        </div>
+                        <div style="grid-column: 1 span;">
+                            <label for="" style="display: block;">END DATE <span style="color: red;">*</span></label>
+                            <input type="date"  style="padding: 10px; width: 100%;border: none; background-color: #ededed;" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="" style="width: 100%;">
+                    <div class="" style="margin: 10px 0px; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit,minmax(180px,1fr));">
+                        <div style="grid-column: 1 span;">
+                            <label for="" style="display: block;">Do you have musicians or a band?<span style="color: red;">*</span></label>
+                            <input type="radio" name="band" id="" value="yes">
+                            <input type="radio" name="band" id="" value="no">
+                        </div>
+                        <div style="grid-column: 1 span;">
+                            <label for="" style="display: block;">Do you need session musicians?<span style="color: red;">*</span></label>
+                            <input type="radio" name="band" id="" value="yes">
+                            <input type="radio" name="band" id="" value="no">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="" style="width: 100%;">
+                   <p>Anything else?</p>
+                   <textarea name="" id="" cols="" rows="10" style="width: 100%; margin: 10px 0px;border: none; background-color: #ededed;"></textarea> 
+                </div>
+
+                <div>
+                    <button type="submit" style="cursor: pointer; width: 100%; background-color: #000; text-align: center; padding: 10px; color: #fff; font-size: 1.2em; border: none; text-transform: uppercase;">submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="main-footer">
+            <div class="" style="color: #fff;">
+                <div class="logo">
+                    <img src="../img/logo.png" alt="Logo">
+                </div>
+                <div class="title-main-footer">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique consectetur error non? Officia quas, voluptas dolorum aperiam ab commodi, dignissimos soluta debitis tempora natus aut facere eius nobis nam reprehenderit?</p>
+                </div>
+            </div>
+            <div class="" style="color: #fff; align-self: center; justify-self: center;">
+                <ul style="list-style-type: none;">
+                    <span>Quick Links</span>
+                    <li>
+                        <a href="">
+                            <i class='bx bx-play' style="color: #A9734A;"></i>
+                            The Blackbird Academy</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class='bx bx-play' style="color: #A9734A;"></i>
+                            The Blackbird Academy</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class='bx bx-play' style="color: #A9734A;"></i>
+                            The Blackbird Academy</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class='bx bx-play' style="color: #A9734A;"></i>
+                            The Blackbird Academy</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class='bx bx-play' style="color: #A9734A;"></i>
+                            The Blackbird Academy</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class='bx bx-play' style="color: #A9734A;"></i>
+                            The Blackbird Academy</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="" style="color: #fff;box-sizing: border-box;">
+                <div style="padding: 3rem 0px;">
+                    <h1>Location</h1>
+                    <p>Berry Hill, Nashville, TN</p>
+                    <p>Berry Hill, Nashville, TN</p>
+                    <p>Berry Hill, Nashville, TN</p>
+                </div>
+
+                <div style="box-sizing: border-box;">
+                    <h1>Internships</h1>
+                    <p>
+                        <i class='bx bxs-calendar' style='color:#a9734a'></i>
+                        Internship Inquiries</p>
+                </div>
+            </div>
+            <div class="" style="color: #fff;box-sizing: border-box; justify-self: auto;">
+                <div style="padding: 3rem 0px;">
+                    <h1>Location</h1>
+                    <p>Berry Hill, Nashville, TN</p>
+                    <p>Berry Hill, Nashville, TN</p>
+                    <p>Berry Hill, Nashville, TN</p>
+                </div>
+
+                <div style="box-sizing: border-box;">
+                    <h1>Internships</h1>
+                    <p>
+                        <i class='bx bxs-calendar' style='color:#a9734a'></i>
+                        Internship Inquiries</p>
+                </div>
+            </div>
+        </div>
+        <div class="secundary-footer">
+            <p style="color: #fff;">Thanks for stopping by!  If you found a bug or something’s not working, <span style="color: #A9734A;">please let us know.</span></p>
+        </div>
+
+        <div class="last-footer" style="display: flex; align-items: center;justify-content: center; flex-direction: column; background-color: #A9734A; width: 100%;">
+            <div class="footer-social-media">
+                <a href="">
+                    <i class='bx bxl-instagram' style='color:#ffffff; font-size: 25px;'  ></i>
+                </a>
+                <a href="">
+                    <i class='bx bxl-facebook-square' style='color:#ffffff; font-size: 25px;'  ></i>
+                </a>
+                <a href="">
+                    <i class='bx bxl-twitter' style='color:#ffffff;font-size: 25px;' ></i>
+                </a>
+            </div>
+            <div class="content2_last-footer">
+                <p>© Djuzzy Studio, 2002-2024. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <a href="#" class="scrollback" style="">
+        <i class='bx bx-chevron-up' style="color: #fff; font-size: 30px;"></i>
+    </a>
+
+    <script src="../js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.querySelector('.navbar');
+        const scrollBack = document.querySelector('.scrollback');
+        const changePoint = 300; // Altere para a altura desejada em pixels
+        const changePointScroll = 600;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY >= changePoint) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if(window.scrollY >= changePointScroll){
+                scrollBack.style.display = 'flex';
+
+            }else{
+                scrollBack.style.display = 'none';
+            }
+        });
+
+        
+    }); 
+    </script>
+</body>
+</html>
