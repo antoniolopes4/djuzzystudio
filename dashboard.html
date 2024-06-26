@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Clientes</title>
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>Dashboard</h1>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Contatos</a></li>
+                    <li><a href="#">Agendas</a></li>
+                    <li><a href="#">Configurações</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <img src="avatar.jpg" alt="Avatar" class="avatar">
+                <div class="user-info">
+                    <span class="welcome">Bem-vindo, Usuário!</span>
+                    <a href="#">Sair</a>
+                </div>
+            </div>
+        </header>
+        
+        <div class="content">
+            <div class="contacts">
+                <h2>Contatos</h2>
+                <ul id="contact-list">
+                    <!-- Lista de contatos será preenchida dinamicamente -->
+                </ul>
+            </div>
+            <div class="agendas">
+                <h2>Agendas Realizadas</h2>
+                <ul id="agenda-list">
+                    <!-- Lista de agendas realizadas será preenchida dinamicamente -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+<script>
+    $(document).ready(function() {
+    // Função para carregar os contatos após o envio do formulário
+    function carregarContatos() {
+        $.ajax({
+            type: 'GET',
+            url: 'https://djuzzyapi.onrender.com/contact', // URL do endpoint para buscar os contatos
+            dataType: 'json',
+            success: function(response) {
+                exibirContatos(response); // Chama a função para exibir os contatos
+            },
+            error: function(error) {
+                console.error('Erro ao carregar contatos:', error);
+                // Pode exibir uma mensagem de erro na dashboard, se necessário
+            }
+        });
+    }
+
+    function carregarAgendas() {
+        $.ajax({
+            type: 'GET',
+            url: 'https://djuzzyapi.onrender.com/booknow', // URL do endpoint para buscar os contatos
+            dataType: 'json',
+            success: function(response) {
+                exibirAgenda(response); // Chama a função para exibir os contatos
+            },
+            error: function(error) {
+                console.error('Erro ao carregar contatos:', error);
+                // Pode exibir uma mensagem de erro na dashboard, se necessário
+            }
+        });
+    }
+
+    // Função para exibir os contatos na lista
+    function exibirContatos(contatos) {
+        const contactList = $('#contact-list');
+        contactList.empty(); // Limpa a lista antes de adicionar os novos contatos
+
+        contatos.forEach(function(contato) {
+            const li = $('<li>').text(contato.firstName + ' ' + contato.lastName + ' - ' + contato.phone);
+            contactList.append(li);
+        });
+    }
+
+    function exibirAgenda(agendas) {
+        const agendaList = $('#agenda-list');
+        agendaList.empty(); // Limpa a lista antes de adicionar os novos contatos
+        agendas.forEach(function(contato) {
+            const li = $('<li>').text(contato.firstName + ' ' + contato.lastName + ' - ' + contato.phone);
+                agendaList.append(li);
+        });
+    }
+
+    // Carrega os contatos inicialmente ao carregar a página
+    carregarContatos();
+    carregarAgendas();
+});
+</script>
+</body>
+</html>
