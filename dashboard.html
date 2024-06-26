@@ -25,10 +25,10 @@
                 </ul>
             </nav>
             <div class="user-profile">
-                <img src="avatar.jpg" alt="Avatar" class="avatar">
+                <div class="avatar" id="user-avatar">A</div>
                 <div class="user-info">
-                    <span class="welcome">Bem-vindo, Usuário!</span>
-                    <a href="#">Sair</a>
+                    <span class="welcome">Bem-vindo, <span id="username">Usuário</span>!</span>
+                    <a href="#" id="logout">Sair</a>
                 </div>
             </div>
         </header>
@@ -51,61 +51,66 @@
     
 <script>
     $(document).ready(function() {
-    // Função para carregar os contatos após o envio do formulário
-    function carregarContatos() {
-        $.ajax({
-            type: 'GET',
-            url: 'https://djuzzyapi.onrender.com/contact', // URL do endpoint para buscar os contatos
-            dataType: 'json',
-            success: function(response) {
-                exibirContatos(response); // Chama a função para exibir os contatos
-            },
-            error: function(error) {
-                console.error('Erro ao carregar contatos:', error);
-                // Pode exibir uma mensagem de erro na dashboard, se necessário
-            }
-        });
-    }
+        var username = localStorage.getItem('username') || 'Usuário';
+        $('#username').text(username);
+        $('#user-avatar').text(username.charAt(0).toUpperCase());
 
-    function carregarAgendas() {
-        $.ajax({
-            type: 'GET',
-            url: 'https://djuzzyapi.onrender.com/booknow', // URL do endpoint para buscar os contatos
-            dataType: 'json',
-            success: function(response) {
-                exibirAgenda(response); // Chama a função para exibir os contatos
-            },
-            error: function(error) {
-                console.error('Erro ao carregar contatos:', error);
-                // Pode exibir uma mensagem de erro na dashboard, se necessário
-            }
-        });
-    }
+        function carregarContatos() {
+            $.ajax({
+                type: 'GET',
+                url: 'https://djuzzyapi.onrender.com/contact',
+                dataType: 'json',
+                success: function(response) {
+                    exibirContatos(response);
+                },
+                error: function(error) {
+                    console.error('Erro ao carregar contatos:', error);
+                }
+            });
+        }
 
-    // Função para exibir os contatos na lista
-    function exibirContatos(contatos) {
-        const contactList = $('#contact-list');
-        contactList.empty(); // Limpa a lista antes de adicionar os novos contatos
+        function carregarAgendas() {
+            $.ajax({
+                type: 'GET',
+                url: 'https://djuzzyapi.onrender.com/booknow',
+                dataType: 'json',
+                success: function(response) {
+                    exibirAgenda(response);
+                },
+                error: function(error) {
+                    console.error('Erro ao carregar contatos:', error);
+                }
+            });
+        }
 
-        contatos.forEach(function(contato) {
-            const li = $('<li>').text(contato.firstName + ' ' + contato.lastName + ' - ' + contato.phone);
-            contactList.append(li);
-        });
-    }
+        function exibirContatos(contatos) {
+            const contactList = $('#contact-list');
+            contactList.empty();
+            contatos.forEach(function(contato) {
+                const li = $('<li>').text(contato.firstName + ' ' + contato.lastName + ' - ' + contato.phone);
+                contactList.append(li);
+            });
+        }
 
-    function exibirAgenda(agendas) {
-        const agendaList = $('#agenda-list');
-        agendaList.empty(); // Limpa a lista antes de adicionar os novos contatos
-        agendas.forEach(function(contato) {
-            const li = $('<li>').text(contato.firstName + ' ' + contato.lastName + ' - ' + contato.phone);
+        function exibirAgenda(agendas) {
+            const agendaList = $('#agenda-list');
+            agendaList.empty();
+            agendas.forEach(function(contato) {
+                const li = $('<li>').text(contato.firstName + ' ' + contato.lastName + ' - ' + contato.phone);
                 agendaList.append(li);
-        });
-    }
+            });
+        }
 
-    // Carrega os contatos inicialmente ao carregar a página
-    carregarContatos();
-    carregarAgendas();
-});
+        carregarContatos();
+        carregarAgendas();
+
+        // Implementar logout
+        $('#logout').on('click', function(event) {
+            event.preventDefault();
+            localStorage.removeItem('username');
+            window.location.href = 'login.html';
+        });
+    });
 </script>
 </body>
 </html>
