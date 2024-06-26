@@ -69,6 +69,11 @@
                     </div>
                 </div>
 
+                <div style="padding: 10px;">
+                    <span style="margin-bottom: 10px;">Logar com Facebook</span>
+                    <div style="margin-top: 10px;"><fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button></div>
+                </div>
+
                 <div style="margin-top: 10px;">
                     <button id="loginButton" type="button" style="background-color: black; color: white; padding: 15px 30px; border: none; cursor: pointer; width: 100%;">Login</button>
                 </div>
@@ -179,7 +184,8 @@
             </div>
         </div>
     </footer>
-
+    <script src="./js/apiFacebook.js"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {

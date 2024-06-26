@@ -95,8 +95,8 @@
         function exibirAgenda(agendas) {
             const agendaList = $('#agenda-list');
             agendaList.empty();
-            agendas.forEach(function(contato) {
-                const li = $('<li>').text(contato.firstName + ' ' + contato.lastName + ' - ' + contato.phone);
+            agendas.forEach(function(agenda) {
+                const li = $('<li>').text(agenda.firstName + ' ' + agenda.lastName + ' - ' + agenda.genre + ' - ' + agenda.details + ' - ' + agenda.startDate + ' - ' + agenda.endDate); ;
                 agendaList.append(li);
             });
         }
