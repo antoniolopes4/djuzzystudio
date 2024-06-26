@@ -6,7 +6,10 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-
+    <meta name="description" content="Transformando sonhos em notas , a melhor productora de musicas ">
+    <meta name="keywords" content="studio de musica, musica, productora">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="">
 </head>
 <body>
     <header>
@@ -34,6 +37,7 @@
             </div>
             <div class="menu-right">
                 <a href="agendar.html" class="cta-button">Book Now</a>
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
                 <div class="hamburger" onclick="toggleMobileMenu()">
                     <span></span>
                     <span></span>
@@ -244,6 +248,8 @@
         <i class='bx bx-chevron-up' style="color: #fff; font-size: 30px;"></i>
     </a>
 
+    <script src="./js/apiFacebook.js"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
     <script src="./js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
