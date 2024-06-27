@@ -148,16 +148,35 @@ header{
 
 }
 
+.gear-title{
+    height: 100%; 
+    display: flex; 
+    padding: 0px 50px; 
+    justify-content: center; 
+    flex-direction: column; 
+    color: #fff; 
+    width: 50%; 
+    background-image: url('../img/vintage-photo-texture-overlay-3.jpg'); 
+    height: 100%; 
+    background-size: cover;
+}
+
+.gear-title h1{
+    font-size: 8.2em;
+}
 
 #wrapper-rooms{
     width: 100%;
     background-image: url('../img/vintage-photo-texture-overlay-3.jpg');
-    
+    height: 890px;
 }
 
+.rooms{
+    margin-top: 40px;
+}
 
 .title-rooms{
-    padding: 2rem 2rem 2rem;
+    padding: 5rem 2rem 2rem;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -177,14 +196,13 @@ header{
 }
 
 .rooms{
- padding: 8rem 0px;
+ padding: 2rem 0px;
 }
 
 .rooms img{
-    width: 400px !important;
-    height:400px !important;
+    width: 330px !important;
+    height:330px !important;
     object-fit: cover;
-    
     margin: 0px 10px;
 }
 
@@ -270,10 +288,12 @@ header{
 
 .record-img{
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
     width: 55%;
+    align-items: center;
     overflow: hidden; /* esconde a imagem no :hover */
+    flex-wrap: wrap;
+    padding: 10px;
 
 }
 
@@ -283,7 +303,6 @@ header{
     background: url('../img/Maren-Morris-Hero.jpg');
     background-size: 120%;
     transition: background 0.5s;
-
 }
 .box-record-img:hover{
     background-size: 100%;
@@ -301,6 +320,7 @@ header{
 }
 
 .record-title a{
+    text-align: center;
     margin: 10px 0px;
     width: 250px;
     display: block;
@@ -418,6 +438,7 @@ footer{
 
 
 
+
 .secundary-footer{
     display: flex;
     padding: 5rem 0px;
@@ -438,12 +459,25 @@ footer{
 }
 
 @media (max-width:1280px) {
+
+    .gear-title h1{
+        font-size: 5.3em !important;
+    }
+
     .record{
         display: block !important;
     }
 
+    #wrapper-rooms{
+        height: auto !important;
+    }
+
     .title-banner{
         padding: 2rem;
+    }
+
+    .record-img{
+        flex: 10rem;
     }
 
     .wrapper-record{
@@ -471,6 +505,12 @@ footer{
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
+    .slick-track img{
+        max-width: 260px !important;
+        max-height: 260px !important;
+    }
+
+
 }
 
 @media (max-width: 800px) {
@@ -480,9 +520,28 @@ footer{
     .content1-main-footer {
         grid-column: span 1;
     }
+
+    .slick-track img{
+        max-width: 160px !important;
+        max-height: 160px !important;
+    }
+
+    .make_services-wrapper h1{
+        font-size: 50px !important;
+    }
+
+    
 }
 
 @media (max-width: 600px) {
+
+    .record-title h1{
+        font-size: 1.3em;
+    }
+    .record-title p{
+        font-size: 1.2em !important;
+    }
+
     .main-footer {
         grid-template-columns: 1fr;
     }
@@ -492,10 +551,84 @@ footer{
     .content3-main-footer{
         justify-self:self-start !important;
     }
+
+    .make_services-wrapper h1{
+        font-size: 45px !important;
+    }
 }
 
 
+@media (max-width: 500px) {
+
+    .make_services-wrapper h1{
+        font-size: 28px !important;
+    }
+
+    .make_services-wrapper p{
+        font-size: 10px !important;
+    }
+
+    .make_services-wrapper a{
+        padding: 20px 10px !important;
+        font-size: 14px !important;
+    }
+
+    .main-footer{
+        align-items: first baseline;
+        gap: 30px;
+    }
+
+    .content1-main-footer{
+        grid-column: 2 span;
+    }
+
+    .content2-main-footer{
+        align-self: baseline;
+        justify-content: baseline;
+    }
+
+    .content1-main-footer{
+        align-self: first baseline;
+
+    }
+    .main-footer h1{
+        font-size: 20px !important;
+    }
+
+    
+
+    .record-title h1{
+        font-size: 1.3em;
+    }
+    .record-title p{
+        font-size: 1.2em !important;
+    }
+
+    .gear-title  > h1{
+        font-size: 10px !important;
+    }
+
+}
+
+
+
 @media (max-width:990px) {
+
+    .navbar{
+        font-size: 1.2em;
+    }
+
+    .gear-title h1{
+        font-size: 6.4em !important;
+    }
+
+    .title-rooms{
+        flex-wrap: wrap !important;
+    }
+
+    .title-rooms h1{
+        flex: 100%;
+    }
 
     .main-footer {
         grid-template-columns: 1fr 1fr;
@@ -607,4 +740,62 @@ footer{
         font-size: 4.2em;
     }
 
+}
+
+
+/* Estilos para garantir que o slider de imagem apareça em apenas uma linha */
+.rooms img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.slick-slide {
+    margin: 0 10px; /* Espaço entre as imagens */
+}
+
+.slick-list {
+    overflow: hidden;
+}
+
+.slick-track {
+    display: flex;
+    align-items: center;
+}
+
+/* Ajustes de estilo para tamanhos de tela específicos */
+@media (max-width: 1024px) {
+    .slick-slide {
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .slick-slide {
+        margin: 0 2px;
+    }
+}
+
+
+@media (max-width:500px) {
+    .box-record-img{
+        width: 120px;
+        height: 120px;
+    }
+
+    .record-title h1{
+        font-size: 4.2em !important;
+    }
+
+    .record-title p{
+        font-size: 1.1em !important;
+    }
+
+
+    .gear-title h1 {
+        font-size: 3.2em !important;
+    }
+    .gear-title p{
+        font-size: 1.2em !important;
+    }
 }
