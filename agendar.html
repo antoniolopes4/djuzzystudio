@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/booknow.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <title>Agendar</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body> 
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./img/logo.png" alt="Logo">
+                </a>
+            </div>
+            <div class="menu-left">
+                <a class="" href="index.html">
+                    Home
+                    <span></span>
+                </a>
+                <a class="" href="sobre.html">
+                    Sobre
+                    <span></span>
+                </a>
+                <a href="contacto.html">Contacto
+                    <span></span>
+                </a>
+                <a href="servicos.html">Servicos
+                    <span></span>
+                </a>
+                <a class="active" href="agendar.html">Book Now
+                    <span></span>
+                </a>
+            </div>
+            <div class="menu-right" style="">  
+                <a href="login.html" class="cta-button" style="background-image-color: #A9734A; color: #fff;">Login In</a>
+
+                <div class="hamburger" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+        <div id="mobileMenu" class="mobile-menu">
+            <a href="#" class="closebtn" onclick="toggleMobileMenu()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="agendar.html">Book Now</a>
+            <a href="login.html" class="cta-button" style="background-color: #A9734A; width: 50%; margin-left: 20px; width: 30%;">Login</a>
+        </div>
+    </header>
+    <div class="wrapper-booknow">
+        <div class="booknow-image">
+            <h1>BOOKING</h1>
+            <div class="booknow-started">
+                <h2>Iniciar</h2>
+                <p style="margin: 10px 0px;">Vamos criar algo incrível juntos!</p>
+                <div class="booknow-started-content">
+                    <h3>Para consultas sobre <span>Reserva de estúdio</span>, preencha o formulário ou use as informações de contato abaixo.</h3>
+                </div>
+
+                <div style="font-size: 1.2em; margin: 20px 0px;">
+                    <p>Para saber mais sobre uma “semana de sessões para estudantes” na The Blackbird Academy, <span>clique aqui.</span></p>
+                </div>
+
+                <div style="font-size: 1.2em; padding: 30px 15px; border-top: 1px solid rgba(255, 255, 255, 0.25); border-bottom: 1px solid rgba(255, 255, 255, 0.25);">
+                    <p>info@djuzzystudio.com</p>
+                    <p>Ligue para Anna em (+244) 941 323 553</p>
+                </div>
+
+                <div class="wrapper-social-media">
+                    <h1>Siga-nos nas redes sociais</h1>
+                    <div class="social-media">
+                        <a href="#"><i class='bx bxl-instagram' style='color:#ffffff; font-size: 25px;'></i></a>
+                        <a href="#"><i class='bx bxl-facebook-square' style='color:#ffffff; font-size: 25px;'></i></a>
+                        <a href="#"><i class='bx bxl-twitter' style='color:#ffffff; font-size: 25px;'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="booknow-form" style="display: flex; flex-direction: column;align-items: center;">
+            <div class="" style="gap: 10px; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 30px;">
+                <a href="index.html" style="background-color: black; border-radius: 50%; display: block; margin: 0px 0px; padding: 6px 10px;">
+                    <img src="./img/logo.png" alt="" style="width: 50px; height: 50px;">
+                </a>
+                <h1 style="text-align: center;">Formulário de reserva de estúdio</h1>
+            </div>
+            <form id="bookingForm" style="padding: 1rem 3rem; width: 100%;">
+                <div style="width: 100%;">
+                    <label for="firstName">Nome <span style="color: red;">*</span></label>
+                    <div style="margin: 10px 0px; display: grid; gap: 10px; grid-template-columns: 1fr 1fr;">
+                        <input type="text" id="firstName" name="firstName" placeholder="First" style="padding: 10px; grid-column: 1 span; border: none; background-color: #ededed;" required>
+                        <input type="text" id="lastName" name="lastName" placeholder="Last" style="padding: 10px; border: none; background-color: #ededed;" required>
+                    </div>
+                </div>
+                <div style="width: 100%; margin-top: 20px;">
+                    <div style="margin: 10px 0px; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit,minmax(100px,1fr));">
+                        <div style="grid-column: 1 span;">
+                            <label for="phone" style="display: block;">Telefone <span style="color: red;">*</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="Phone" style="padding: 10px; width: 100%; border: none; background-color: #ededed;" required>
+                        </div>
+                        <div style="grid-column: 2 span;">
+                            <label for="email" style="display: block;">Email <span style="color: red;">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="Email" style="padding: 10px; width: 100%; border: none; background-color: #ededed;" required>
+                        </div>
+                        <div style="grid-column: 1 span;">
+                            <label for="prefix" style="display: block;">Int' Prefixo <span style="color: red;">*</span></label>
+                            <input type="text" id="prefix" name="prefix" placeholder="Int' Prefix" style="padding: 10px; width: 100%; border: none; background-color: #ededed;" required>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 100%; margin-top: 20px;">
+                    <div style="margin: 10px 0px; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit,minmax(180px,1fr));">
+                        <div style="grid-column: 2 span;">
+                            <label for="website" style="display: block;">Site <span style="color: red;">*</span></label>
+                            <input type="text" id="website" name="website" placeholder="Website" style="padding: 10px; width: 100%; border: none; background-color: #ededed;" required>
+                        </div>
+                        <div style="grid-column: 1 span;">
+                            <label for="genre" style="display: block;">Gênero/tipo musical <span style="color: red;">*</span></label>
+                            <select id="genre" name="genre" style="padding: 10px; border: none; background-color: #ededed;" required>
+                                <option value="">Selecione um gênero/tipo</option>
+                                <option value="pop">Pop</option>
+                                <option value="country">Jazz</option>
+                                <option value="hip-hop-rap">Hip-hop, Rap</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 100%; margin-top: 20px;">
+                    <div style="margin: 10px 0px; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit,minmax(180px,1fr));">
+                        <div style="grid-column: 2 span;">
+                            <label for="songs" style="display: block;">Nº de músicas/projetos <span style="color: red;">*</span></label>
+                            <input type="text" id="songs" name="songs" placeholder="Songs/Projects" style="padding: 10px; width: 100%; border: none; background-color: #ededed;" required>
+                        </div>
+                        <div style="grid-column: 1 span;">
+                            <label for="details" style="display: block;">Detalhes do Projeto <span style="color: red;">*</span></label>
+                            <input type="text" id="details" name="details" placeholder="Project Details" style="padding: 10px; width: 100%; border: none; background-color: #ededed;" required>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 100%; margin-top: 20px;">
+                    <div style="margin: 10px 0px; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit,minmax(100px,1fr));">
+                        <div style="grid-column: 1 span;">
+                            <label for="startDate" style="display: block;">Data de início <span style="color: red;">*</span></label>
+                            <input type="date" id="startDate" name="startDate" placeholder="Start Date" style="padding: 10px; width: 100%; border: none; background-color: #ededed;" required>
+                        </div>
+                        <div style="grid-column: 2 span;">
+                            <label for="endDate" style="display: block;">Data de fim <span style="color: red;">*</span></label>
+                            <input type="date" id="endDate" name="endDate" placeholder="End Date" style="padding: 10px; width: 100%; border: none; background-color: #ededed;" required>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin: 30px 0px;">
+                    <h2>Informações da sessão</h2>
+                    <p style="margin: 15px 0px;">Para reserva de estúdio</p>
+                    <div style="margin: 20px 0px;">
+                        <p>Isso é para uma banda ou artista solo?</p>
+                        <div>
+                            <input type="radio" id="band" name="band" value="band" required>
+                            <label for="band">Banda</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="solo" name="band" value="solo" required>
+                            <label for="solo">Artista solo</label>
+                        </div>
+                    </div>
+                    <div style="margin: 20px 0px;">
+                        <p>Você precisa de músicos de estúdio?</p>
+                        <div>
+                            <input type="radio" id="yes" name="sessionMusicians" value="yes" required>
+                            <label for="yes">Sim</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="no" name="sessionMusicians" value="no" required>
+                            <label for="no">Não</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="additionalInfo">Informações adicionais</label>
+                        <textarea id="additionalInfo" name="additionalInfo" style="padding: 10px; width: 100%; height: 100px; border: none; background-color: #ededed;"></textarea>
+                    </div>
+                </div>
+                <div style="margin-top: 5px;">
+                    <button type="submit" style="width: 100%; background-color: black; color: white; padding: 15px 30px; border: none; cursor: pointer;">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="main-footer">
+            <div class="content1-main-footer" style="color: #fff;justify-self: center;">
+                <div class="logo">
+                    <img src="./img/logo.png" alt="Logo">
+                </div>
+                <div class="title-main-footer">
+                    <p>O principal estúdio de gravação de Luanda com nove salas de rastreamento, overdub e mixagem de classe mundial.</p>
+                </div>
+            </div>
+            <div class="content2-main-footer" style="color: #fff; justify-self: center;">
+                <ul style="list-style-type: none;">
+                    <h1>Links Rápidos</h1>
+                    <li>
+                        <a href="index.html">
+                            <i class='bx bx-play' style="color: #A9734A;"></i>
+                            Home</a>
+                    </li>
+                    <li>
+                        <a href="sobre.html">
+                            <i class='bx bx-play' style="color: #A9734A;"></i>
+                            Sobre</a>
+                    </li>
+                    <li>
+                        <a href="contacto.html">
+                            <i class='bx bx-play' style="color: #A9734A;"></i>
+                            Contacto</a>
+                    </li>
+                    <li>
+                        <a href="servicos.html">
+                            <i class='bx bx-play' style="color: #A9734A;"></i>
+                            Serviços</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="content3-main-footer" style="color: #fff;box-sizing: border-box; justify-self: center;">
+                <div style="">
+                    <h1>Localização</h1>
+                    <p>Sambizanga, Luanda, LA</p>
+                    <p>Morro Bento, Benfica, LA</p>
+                    <p>Kibala, Lobito, BE</p>
+                </div>
+
+                <div style="box-sizing: border-box; margin: 20px 0px;">
+                    <h1>Estágios</h1>
+                    <p>
+                        <i class='bx bxs-calendar' style='color:#a9734a'></i>
+                        Requisições de estágio</p>
+                </div>
+            </div>
+            <div class="content4-main-footer" style="color: #fff;box-sizing: border-box;justify-self: center;">
+                <div style="">
+                    <h1>Contacto</h1>
+                    <p style="display: flex; gap: 10px;">
+                        <i class='bx bx-envelope' style="color: #A9734A;"></i>
+                        info@djuzzystudio.com
+                    </p>
+                    <p>Sambizanga, Luanda, LA</p>
+                </div>
+            </div>
+        </div>
+        <div class="secundary-footer">
+            <p style="color: #fff;">Obrigado por apareceres!  Se você encontrou um bug ou algo não está funcionando, <span style="color: #A9734A;">por favor nos informe.</span></p>
+        </div>
+
+        <div class="last-footer" style="display: flex; align-items: center;justify-content: center; flex-direction: column; background-image-color: #A9734A; width: 100%;">
+            <div class="footer-social-media">
+                <a href="https://www.instagram.com/antoniolopes4real/">
+                    <i class='bx bxl-instagram' style='color:#ffffff; font-size: 25px;'  ></i>
+                </a>
+                <a href="https://www.facebook.com/antoniolopes4real">
+                    <i class='bx bxl-facebook-square' style='color:#ffffff; font-size: 25px;'  ></i>
+                </a>
+                <a href="https://x.com/antoniodjuzzy">
+                    <i class='bx bxl-twitter' style='color:#ffffff;font-size: 25px;' ></i>
+                </a>
+            </div>
+            <div class="content2_last-footer">
+                <p>&copy; Djuzzy Studio, 2015-2024. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#bookingForm').on('submit', function(event) {
+                event.preventDefault(); // Impede o envio padrão do formulário
+
+                // Coleta os dados do formulário
+                var formData = {
+                    firstName: $('#firstName').val(),
+                    lastName: $('#lastName').val(),
+                    phone: $('#phone').val(),
+                    email: $('#email').val(),
+                    prefix: $('#prefix').val(),
+                    website: $('#website').val(),
+                    genre: $('#genre').val(),
+                    songs: $('#songs').val(),
+                    details: $('#details').val(),
+                    startDate: $('#startDate').val(),
+                    endDate: $('#endDate').val(),
+                    band: $('input[name="band"]:checked').val(),
+                    sessionMusicians: $('input[name="sessionMusicians"]:checked').val(),
+                    additionalInfo: $('#additionalInfo').val()
+                };
+
+                // Envia os dados via AJAX
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://djuzzyapi.onrender.com/booknow', // URL do seu script PHP
+                    data: JSON.stringify(formData),
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    success: function(response) {
+                        Swal.fire({
+                        title: "Agenda realizada com sucesso!",
+                        text: "Sucesso!",
+                        icon: "success"
+                        });
+                    },
+                    error: function(error) {
+                        Swal.fire({
+                        title: "Erro ao enviar os dados!!",
+                        text: "Erro!",
+                        icon: "error"
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

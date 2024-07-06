@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Clientes</title>
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./img/logo.png" alt="Logo">
+                </a>
+                <h1>Dashboard</h1>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Contatos</a></li>
+                    <li><a href="#">Agendas</a></li>
+                    <li><a href="#">Configurações</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar" id="user-avatar">A</div>
+                <div class="user-info">
+                    <span class="welcome">Bem-vindo, <span id="username">Usuário</span>!</span>
+                    <a href="#" id="logout">Sair</a>
+                </div>
+            </div>
+        </header>
+        
+        <div class="content">
+            <div class="contacts">
+                <h2>Contatos</h2>
+                <ul id="contact-list">
+                    <!-- Lista de contatos será preenchida dinamicamente -->
+                </ul>
+            </div>
+            <div class="agendas">
+                <h2>Agendas Realizadas</h2>
+                <ul id="agenda-list">
+                    <!-- Lista de agendas realizadas será preenchida dinamicamente -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+<script>
+    $(document).ready(function() {
+        var username = localStorage.getItem('username') || 'Usuário';
+        $('#username').text(username);
+        $('#user-avatar').text(username.charAt(0).toUpperCase());
+
+        function carregarContatos() {
+            $.ajax({
+                type: 'GET',
+                url: 'https://djuzzyapi.onrender.com/contact',
+                dataType: 'json',
+                success: function(response) {
+                    exibirContatos(response);
+                },
+                error: function(error) {
+                    console.error('Erro ao carregar contatos:', error);
+                }
+            });
+        }
+
+        function carregarAgendas() {
+            $.ajax({
+                type: 'GET',
+                url: 'https://djuzzyapi.onrender.com/booknow',
+                dataType: 'json',
+                success: function(response) {
+                    exibirAgenda(response);
+                },
+                error: function(error) {
+                    console.error('Erro ao carregar contatos:', error);
+                }
+            });
+        }
+
+        function exibirContatos(contatos) {
+            const contactList = $('#contact-list');
+            contactList.empty();
+            contatos.forEach(function(contato) {
+                const li = $('<li>').text(contato.firstName + ' ' + contato.lastName + ' - ' + contato.phone);
+                contactList.append(li);
+            });
+        }
+
+        function exibirAgenda(agendas) {
+            const agendaList = $('#agenda-list');
+            agendaList.empty();
+            agendas.forEach(function(agenda) {
+                const li = $('<li>').text(agenda.firstName + ' ' + agenda.lastName + ' - ' + agenda.genre + ' - ' + agenda.details + ' - ' + agenda.startDate + ' - ' + agenda.endDate); ;
+                agendaList.append(li);
+            });
+        }
+
+        carregarContatos();
+        carregarAgendas();
+
+        // Implementar logout
+        $('#logout').on('click', function(event) {
+            event.preventDefault();
+            localStorage.removeItem('username');
+            window.location.href = 'login.html';
+        });
+    });
+</script>
+<script src="./js/index.js"></script>
+</body>
+</html>
